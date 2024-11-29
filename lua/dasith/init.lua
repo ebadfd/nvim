@@ -28,7 +28,7 @@ require('lazy').setup({
     },
   },
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',  opts = {} },
+  { 'numToStr/Comment.nvim', opts = {} },
   {
     'prettier/vim-prettier',
     opts = {},
@@ -41,7 +41,7 @@ require('lazy').setup({
   {
     'tpope/vim-rhubarb',
   },
-
+  { "nvim-neotest/nvim-nio" },
   require 'kickstart.plugins.autoformat',
   require 'kickstart.plugins.debug',
 
@@ -105,11 +105,15 @@ local servers = {
   gopls = {},
   pyright = {},
   rust_analyzer = {},
-  tsserver = {},
+  ts_ls = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   terraformls = {},
   templ = {},
   htmx = {},
+  rnix = {
+    roots = { "flake.nix", "shell.nix", ".git" },
+    filetypes = { "nix" }
+  },
 
   lua_ls = {
     Lua = {
